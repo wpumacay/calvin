@@ -9,35 +9,26 @@ policies using either goal images or language as free-form text.
 
 CALVIN consists of a new simulated environment that will serve as benchmark,
 which is based on the Franka Panda robotic arm. It heavily builds upon the work
-by Lynch et. al. [^2]
+by Lynch & Sermanet [^2], by using the same type of environment and their
+proposed new method as baseline.
 
 ## 2. Background
 
-This paper is based on the previous work by the authors [here][1] and [here][2].
-The key takeaways from these papers consist of the following:
+This paper is based on the previous work by Lynch & Sermanent [^2] and Lynch
+et.al.[^3]. The key takeaways from these papers are:
 
 - Learning Latent Plans from Play
-    + Goal Relabelling
     + Goal Conditioned Behavior Cloning
+    + Dataset generation via Goal Relabelling
 
 - Language Conditioned Imitation Learning over Unstructured Data
     + MultiContext Imitation Learning
 
-### 2.1 Goal Relabelling
+### 2.1 Goal Conditioned Behavior Cloning (GCBC)
 
-This consists of a new approach for generating a training dataset from unstructured
-data collected from **Play**. By play the authors mean data that can be collected
-in an exploratory way akin to how humans interact with the environment, e.g. when
-babies interact with their environment while learning.
+![method_goal_conditioned_behavior_cloning][img_goal_conditioned_behavior_cloning]
 
-In the context of Imitation Learning, it's already difficult to collect expert labeled
-data for one task; it's even more difficult to collect labeled data for many tasks.
-The nice trick that the authors use is to let the data collection process be as
-simple
-
-### 2.2 Goal Conditioned Behavior Cloning (GCBC)
-
-
+### 2.2 Dataset generation via Goal Relabelling
 
 ### 2.3 MultiContext Imitation Learning (MCIL)
 
@@ -105,6 +96,8 @@ You can click [here][0] to see some more results logged in **Weights & Biases**
 <!-- IMAGES -->
 
 [gif_calvin_env_1]: images/gif_calvin_environment.gif
+
+[img_goal_conditioned_behavior_cloning]: images/img_goal_conditioned_behavior_cloning.png
 
 [img_results_close_drawer_success_1]: images/img_close_drawer_success_1.gif
 [img_results_close_drawer_success_2]: images/img_close_drawer_success_2.gif
