@@ -1,11 +1,19 @@
 # Review: CALVIN Benchmark [^1]
 
+![calvin_environment][gif_calvin_env_2]
+
 ## TL;DR
 
 **CALVIN** consists of a novel manipulation benchmark for learning **Goal Conditioned**
 policies using either goal images or language as free-form text.
 
-## 1. Intro
+1. [Introduction](#1-introduction)
+2. [Background](#2-background)
+    + [Goal Conditioned Behavior Cloning](#21-goal-conditioned-behavior-cloning)
+    + [Dataset generation via Goal Relabelling](#22-dataset-generation-via-goal-relabelling)
+    + [MultiContext Imitation Learning](#23-multicontext-imitation-learning)
+
+## 1. Introduction
 
 CALVIN consists of a new simulated environment that will serve as benchmark,
 which is based on the Franka Panda robotic arm. It heavily builds upon the work
@@ -24,14 +32,17 @@ et.al.[^3]. The key takeaways from these papers are:
 - Language Conditioned Imitation Learning over Unstructured Data
     + MultiContext Imitation Learning
 
-### 2.1 Goal Conditioned Behavior Cloning (GCBC)
+### 2.1 Goal Conditioned Behavior Cloning
 
 ![method_goal_conditioned_behavior_cloning][img_goal_conditioned_behavior_cloning]
 
 ### 2.2 Dataset generation via Goal Relabelling
 
-### 2.3 MultiContext Imitation Learning (MCIL)
+![method_goal_relabelling][img_goal_relabelling]
 
+### 2.3 MultiContext Imitation Learning
+
+![method_multicontext_imitation_learning][img_multicontext_imitation_learning]
 
 ## 3. CALVIN benchmark
 
@@ -96,8 +107,11 @@ You can click [here][0] to see some more results logged in **Weights & Biases**
 <!-- IMAGES -->
 
 [gif_calvin_env_1]: images/gif_calvin_environment.gif
+[gif_calvin_env_2]: images/gif_calvin_env_full.gif
 
 [img_goal_conditioned_behavior_cloning]: images/img_goal_conditioned_behavior_cloning.png
+[img_goal_relabelling]: images/img_goal_relabelling.png
+[img_multicontext_imitation_learning]: images/img_multicontext_imitation_learning.png
 
 [img_results_close_drawer_success_1]: images/img_close_drawer_success_1.gif
 [img_results_close_drawer_success_2]: images/img_close_drawer_success_2.gif
