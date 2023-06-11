@@ -2,28 +2,28 @@
 
 ![calvin_environment][gif_calvin_env_2]
 
-## TL;DR
-
-**CALVIN** consists of a novel manipulation benchmark for learning **Goal Conditioned**
-policies using either goal images or language as free-form text.
-
 1. [Introduction](#1-introduction)
 2. [Background](#2-background)
     + [Goal Conditioned Behavior Cloning](#21-goal-conditioned-behavior-cloning)
     + [Dataset generation via Goal Relabelling](#22-dataset-generation-via-goal-relabelling)
     + [MultiContext Imitation Learning](#23-multicontext-imitation-learning)
+3. [CALVIN benchmark](#3-calvin-benchmark)
+    + [CALVIN Environment](#31-calvin-environment)
+    + [CALVIN Dataset](#32-calvin-dataset)
+4. [Some Results](#4-some-results)
 
 ## 1. Introduction
 
-CALVIN consists of a new simulated environment that will serve as benchmark,
-which is based on the Franka Panda robotic arm. It heavily builds upon the work
-by Lynch & Sermanet [^2], by using the same type of environment and their
-proposed new method as baseline.
+**CALVIN** consists of a novel manipulation benchmark for learning **Goal Conditioned**
+policies using either goal images or language as free-form text. It includes a
+simulated manipulation environment, an annotated dataset taken for Imitation
+Learning, and a baseline algorithm (MCIL) introduced by Lynch & Sermanet [^2].
 
 ## 2. Background
 
-This paper is based on the previous work by Lynch & Sermanent [^2] and Lynch
-et.al.[^3]. The key takeaways from these papers are:
+The authors' work is based on previous work by Lynch & Sermanent [^2] and Lynch
+et.al.[^3]. They reproduce the simulated environment introduced by these previous
+works, using [PyBullet][3] instead of [MuJoCo][4] for simulation.
 
 - Learning Latent Plans from Play
     + Goal Conditioned Behavior Cloning
@@ -46,9 +46,33 @@ et.al.[^3]. The key takeaways from these papers are:
 
 ## 3. CALVIN benchmark
 
-![calvin_env][gif_calvin_env_1]
+### 3.1 CALVIN Environment
 
-## 4. Some results
+![calvin_env][img_calvin_env_setup]
+
+#### 3.1.1 Observations
+
+![calvin_env_observations][img_calvin_env_observations]
+
+#### 3.1.2 Actions
+
+![calvin_env_actions][img_calvin_env_actions]
+
+### 3.2 CALVIN Dataset
+
+We can make use of the `visualize_dataset.py` helper script to visualize the
+**Play** data. Below we show some steps from a sample trajectory:
+
+```bash
+# Go back to where the repository was cloned
+cd $CALVIN_ROOOT
+# Run the visualizer pointing to the debug dataset (location of scene_info.npy)
+python scripts/visualize_dataset.py dataset/calvin_debug_dataset/training
+```
+
+![calvin_dataset_data_1][img_calvin_dataset_1]
+
+## 4. Some Results
 
 Below we show some results obtained from training the `MCIL` baseline on the `Debug`
 dataset. We have selected just a few successes and failures of some a few of the
@@ -103,11 +127,20 @@ You can click [here][0] to see some more results logged in **Weights & Biases**
 [0]: <https://api.wandb.ai/links/rl-loco/k59km9vc> (ref-wandb-report-1)
 [1]: <https://learning-from-play.github.io/> (ref-lfp-website)
 [2]: <https://language-play.github.io/> (ref-lang-lfp-website)
+[3]: <https://pybullet.org/> (ref-bullet-repo)
+[4]: <https://mujoco.org/> (ref-mujoco-repo)
 
 <!-- IMAGES -->
 
 [gif_calvin_env_1]: images/gif_calvin_environment.gif
 [gif_calvin_env_2]: images/gif_calvin_env_full.gif
+
+<!-- TODO: Update these to screenshots from the actual environment-->
+[img_calvin_env_setup]: images/gif_calvin_environment.gif
+[img_calvin_env_observations]: images/gif_calvin_environment.gif
+[img_calvin_env_actions]: images/gif_calvin_environment.gif
+
+[img_calvin_dataset_1]: images/gif_calvin_dataset_1.gif
 
 [img_goal_conditioned_behavior_cloning]: images/img_goal_conditioned_behavior_cloning.png
 [img_goal_relabelling]: images/img_goal_relabelling.png
