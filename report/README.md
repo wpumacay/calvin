@@ -1,5 +1,7 @@
 # Review: CALVIN Benchmark [^1]
 
+## [**SLIDES**][14]
+
 1. [Introduction](#1-introduction)
 2. [Background](#2-background)
     + [Dataset generation via Goal Relabelling](#21-dataset-generation-via-goal-relabelling)
@@ -206,8 +208,6 @@ simulation.
 [^2]: [Lynch, Corey & Sermanet, Pierre. *Language Conditioned Imitation Learning over Unstructured Data*](https://arxiv.org/pdf/2005.07648.pdf)
 [^3]: [Lynch, Corey et. al. *Learning Latent Plans from Play*](https://arxiv.org/pdf/1903.01973.pdf)
 
-
-
 [//]: # (References)
 
 <!-- URLS -->
@@ -226,10 +226,7 @@ simulation.
 [11]: <https://github.com/google/gin-config> (ref-gin-config-repo)
 [12]: <https://github.com/deepmind/mujoco_menagerie> (ref-mujoco-menagerie)
 [13]: <https://developer.nvidia.com/isaac-gym> (ref-nvidia-isaac-gym)
-
-<!-- VIDEOS -->
-
-<!-- https://youtu.be/jBpN-ms8wGQ -->
+[14]: <https://docs.google.com/presentation/d/1r03hmisMPr80Js8verMb_-HY7XdbsNouMlw-WLsimT8/edit?usp=sharing> (ref-slides)
 
 <!-- IMAGES -->
 
